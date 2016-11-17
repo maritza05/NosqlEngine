@@ -1,0 +1,14 @@
+{% extends "nosql_engine/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if datamodel %}{{ datamodel.name }}{% else %}Nosqls{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>{{ nosql.name }}</h1>
+        <h2><a href="{{ nosql.datamodel.get_absolute_url }}">{{ datamodel.name }}</a></h2>
+        <p> {{ nosql.official_website }}</p>
+    </div>
+{% endblock %}

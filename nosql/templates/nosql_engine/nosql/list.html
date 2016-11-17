@@ -1,0 +1,31 @@
+{% extends "nosql_engine/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if datamodel %}{{ datamodel.name }}{% else %}Nosqls{% endif %}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <h3>Datamodels</h3>
+        <ul>
+            <li>
+                <a href="{% url "nosql:nosql_list" %}">All</a>
+            </li>
+            {% for d in datamodels %}
+                <li>
+                    <a href="{{ d.get_absolute_url }}">{{ d.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div>
+        <h1>{% if datamodel %}{{ datamodel.name }}{% else %}Nosqls{% endif %}</h1>
+        {% for nosql in nosqls %}
+        <div class="item">
+            <a href="{{ nosql.get_absolute_url }}">{{ nosql.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
