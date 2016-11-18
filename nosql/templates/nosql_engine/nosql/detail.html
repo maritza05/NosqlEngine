@@ -9,6 +9,29 @@
     <div>
         <h1>{{ nosql.name }}</h1>
         <h2><a href="{{ nosql.datamodel.get_absolute_url }}">{{ datamodel.name }}</a></h2>
-        <p> {{ nosql.official_website }}</p>
+        <p>{{ nosql.data_url }}</p>
+        <h3>Stored info</h3>
+        <ul>
+            <li>Official website: {{ nosql.official_website }}</li>
+            <li>Developer : {{ nosql.developer }}</li>
+            <li>Initial release: {{ nosql.initial_release }}</li>
+            <li>Current release: {{ nosql.current_release }}</li>
+            <li>License: {{ nosql.license }}</li>
+            <li>Implementation language: {{ nosql.implementation_language }}</li>
+            <li>Data Types: {{ nosql.typing }}</li>
+            <li>Supported Programming Languages: {{ nosql.supported_programming }}</li>
+            <li>Operating Systems: {{ nosql.operating_systems }}</li>
+        </ul>
     </div>
+    {% if wiki_table %}
+    <div>
+        <ul>
+            {% for attribute, value in wiki_table.items %}
+            <li>{{ attribute }} : {{ value }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        <h3>Without Wikipedia Table</h3>
+    {% endif %}
 {% endblock %}
