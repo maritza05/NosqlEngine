@@ -24,7 +24,10 @@
         <h1>{% if datamodel %}{{ datamodel.name }}{% else %}Nosqls{% endif %}</h1>
         {% for nosql in nosqls %}
         <div class="item">
-            <a href="{{ nosql.get_absolute_url }}">{{ nosql.name }}</a>
+            <a href="{{ nosql.get_absolute_url }}">{{ forloop.counter }}.- {{ nosql.name }} - Stackshare votes: {{ nosql.stackshare_votes }} - Stack followers: {{ nosql.stackoverflow_followers }} - Questions: {{ nosql.amount_stackoverflow_questions }}</a>
+            {{ nosql.stack_description }}
+            <hr>
+            {{ nosql.official_description }}
         </div>
         {% endfor %}
     </div>

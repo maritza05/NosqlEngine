@@ -16,10 +16,14 @@
             <li>Developer : {{ nosql.developer }}</li>
             <li>Initial release: {{ nosql.initial_release }}</li>
             <li>Current release: {{ nosql.current_release }}</li>
-            <li>License: {{ nosql.license }}</li>
+            <li>License: {{ license.name }} ({{ license_type }})</li>
             <li>Implementation language: {{ nosql.implementation_language }}</li>
             <li>Data Types: {{ nosql.typing }}</li>
-            <li>Supported Programming Languages: {{ nosql.supported_programming }}</li>
+            <li>Supported Programming Languages:
+                {% for l in languages %}
+                    <p> {{ l.name }} {{ l.amount_repos }}</p>
+                {% endfor %}
+            </li>
             <li>Operating Systems: {{ nosql.operating_systems }}</li>
         </ul>
     </div>
@@ -34,4 +38,7 @@
     {% else %}
         <h3>Without Wikipedia Table</h3>
     {% endif %}
+    <div>
+         {{ summary }}
+    </div>
 {% endblock %}

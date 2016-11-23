@@ -110,5 +110,5 @@ class DBEngineCrawler:
 
 if __name__ == "__main__":
     crawler = DBEngineCrawler()
-    data = crawler.get_supported_languages('http://db-engines.com/en/system/RethinkDB')
+    data = crawler.process_table_info('http://db-engines.com/en/system/Cubrid')
     print(data)
