@@ -1,0 +1,1387 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js css-menubar svg" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap admin template">
+  <meta name="author" content="">
+
+  <title>{{ nosql.name }} | NoSQLEngine</title>
+
+  <link rel="apple-touch-icon" href="../assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static "global/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/css/bootstrap-extend.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/css/site.min.css" %}">
+
+  <!-- Skin tools (demo site only) -->
+  <link rel="stylesheet" href="{% static "global/css/skintools.min.css" %}">
+  <script src="{% static "assets/js/sections/skintools.min.js" %}"></script>
+  <link type="text/css" rel="stylesheet" href="{% static "assets/skins/indigo.css" %}" id="skinStyle">
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="{% static "global/vendor/animsition/animsition.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/asscrollable/asScrollable.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/switchery/switchery.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/intro-js/introjs.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/slidepanel/slidePanel.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/flag-icon-css/flag-icon.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/fonts/font-awesome/css/font-awesome.min.css" %}">
+
+  <!-- Plugins For This Page -->
+  <link rel="stylesheet" href="{% static "global/vendor/nprogress/nprogress.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/card-flip/flip.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/ladda-bootstrap/ladda.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/cards-design/cards-design.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/filament-tablesaw/tablesaw.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/dashboard/ecommerce.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/chartist-js/chartist.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/owl-carousel/owl.carousel.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/slick-carousel/slick.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/uikit/carousel.min.css" %}">
+
+  <!-- Plugin for the articles -->
+  <link rel="stylesheet" href="{% static "global/vendor/bootstrap-select/bootstrap-select.min.css" %}">
+
+  <!-- Plugin for tables -->
+  <link rel="stylesheet" href="{% static "global/vendor/datatables-bootstrap/dataTables.bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/datatables-fixedheader/dataTables.fixedHeader.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/datatables-responsive/dataTables.responsive.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/tables/datatable.min.css" %}">
+
+
+  <!-- Page -->
+  <link rel="stylesheet" href="{% static "assets/examples/css/advanced/animation.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/advanced/rating.min.css" %}">
+
+  <!-- Style for the articles -->
+  <link rel="stylesheet" href="{% static "assets/examples/css/apps/documents.min.css" %}">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="{% static "global/fonts/web-icons/web-icons.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/fonts/brand-icons/brand-icons.min.css" %}">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+  <link rel="stylesheet" href="{% static "global/fonts/themify-icons/themify-icons.css" %}">
+
+
+  <!--[if lt IE 9]>
+    <script src="../../global/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../../global/vendor/media-match/media.match.min.js"></script>
+    <script src="../../global/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script src="{% static "global/vendor/modernizr/modernizr.min.js" %}"></script>
+  <script src="{% static "global/vendor/breakpoints/breakpoints.min.js" %}"></script>
+  <script src="{% static "global/vendor/pace/pace.min.js" %}"></script>
+  <link href="{% static "global/vendor/pace/pace-atom.css" %}" rel="stylesheet" />
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="app-documents site-menubar-unfold">
+
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse navbar-inverse bg-indigo-600" role="navigation" style="box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left unfolded hided" data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-brand navbar-brand-center">
+        <span class="navbar-brand-text hidden-xs">NoSQL</span>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search" data-toggle="collapse" aria-expanded="false">
+        <span class="sr-only">Toggle Search</span>
+        <i class="icon wb-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li><a href="#">Summary</a></li>
+          <li><a href="#">Data Types</a></li>
+          <li><a href="#">Drivers</a></li>
+          <li><a href="#">Related Technologies</a></li>
+          <li><a href="#">Popularity</a></li>
+          <li><a href="#">Sentiment Analysis</a></li>
+          <li><a href="#">Useful Links</a></li>
+        </ul>
+          <!-- End Navbar Toolbar -->
+      </div>
+        <!-- End Navbar Collapse -->
+
+        <!-- Site Navbar Seach -->
+        <div class="navbar-search-overlap collapse" id="site-navbar-search" aria-expanded="false" style="height: 0px;">
+          <form role="search">
+            <div class="form-group">
+              <div class="input-search">
+                <i class="input-search-icon wb-search" aria-hidden="true"></i>
+                <input type="text" class="form-control" name="site-search" placeholder="Search...">
+                <button type="button" class="input-search-close icon wb-close collapsed" data-target="#site-navbar-search" data-toggle="collapse" aria-label="Close" aria-expanded="false"></button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- End Site Navbar Seach -->
+      </div>
+  </nav>
+  
+
+
+  <div class="page animsition" style="margin: 0 auto;">
+    <div class="page-header">
+      <h1 class="page-title margin-bottom-10">Document Article</h1>
+      <ol class="breadcrumb">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="articles.html">Getting Started</a></li>
+        <li class="active">Article</li>
+      </ol>
+    </div>
+    <div class="page-content">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-btn">
+            <div class="btn-group bootstrap-select">
+              <button type="button" class="btn dropdown-toggle btn-outline" data-toggle="dropdown" title="Getting started" aria-expanded="false">
+              <span class="filter-option pull-left">Getting started</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" style="max-height: 358.677px; overflow: hidden; min-height: 131px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 346.677px; overflow-y: auto; min-height: 119px;"><li data-original-index="0" class="selected"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Getting started</span><span class="icon wb-check check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Configuration</span><span class="icon wb-check check-mark"></span></a></li><li data-original-index="2" class=""><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Developer Tourial</span><span class="icon wb-check check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" style="" data-tokens="null"><span class="text">Compatible article</span><span class="icon wb-check check-mark"></span></a></li></ul></div><select data-plugin="selectpicker" data-style="btn-outline" class="" tabindex="-98">
+              <option>Getting started</option>
+              <option>Configuration</option>
+              <option>Developer Tourial</option>
+              <option>Compatible article</option>
+            </select></div>
+          </div>
+          <button type="submit" class="input-search-btn">
+            <i class="icon wb-search" aria-hidden="true"></i>
+          </button>
+          <input type="text" class="form-control" placeholder="Search the knowledge base...">
+        </div>
+      </div>
+      <div class="documents-wrap article">
+
+        <!-- Side bar -->
+        <div class="article-sidebar affix-top" id="articleAffix" style="box-shadow: 0px 2px 40px 0 rgba(0,0,0,0.1)">
+          <ul class="list-group nav">
+            <li class="list-group-item">
+              <a href="#section-1">Summary</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-2">Data Types</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-3">Drivers</a>
+              <ul class="list-group" id="subList-3">
+                <li class="list-group-item"><a href="#section-3-1">Article section three-one.</a></li>
+                <li class="list-group-item"><a href="#section-3-2">Article section three-two.</a></li>
+                <li class="list-group-item"><a href="#section-3-3">Article section three-three.</a></li>
+                <li class="list-group-item"><a href="#section-3-4">Article section three-four.</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-4">Related Technologies</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-5">Popularity</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-6">Sentiments</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#section-7">Useful Links</a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Side bar -->
+        <div class="article-content" style="background-color: transparent!important;padding-right: 0px;padding-left: 0px;padding-top: 0px;">
+          
+          <!-- Summary Section -->
+          <section>
+            <div class="row">
+              <!-- Summary and technial details -->
+              <div class="col-md-9">
+                <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);background-color: white;">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" id="section-1">Summary
+                      <div class="rating" data-score="{{ nosql.get_performance_rank.1 }}" data-number="5" data-read-only="true" data-plugin="rating" title="good" style="margin-left: 40px;">
+                      </div>
+                    </h3>
+                  </div>
+                  <div class="panel-body">
+                    <p>{{ nosql.get_summary }}</p>
+                    <hr>
+                    <div class="example-wrap margin-lg-0">
+                      <h4 class="example-title">Technical Details</h4>
+                      <div class="list-group has-actions">
+                        <div class="col-md-4">
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point red-600" aria-hidden="true"></i>
+                              <span class="list-text">Official Website</span>
+                              <div class="item-actions">
+                                <small>{{ nosql.official_website }}</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point orange-600" aria-hidden="true"></i>
+                              <span class="list-text">Data Model</span>
+                              <div class="item-actions">
+                                <small>{{ nosql.datamodel.name }}</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point red-600" aria-hidden="true"></i>
+                              <span class="list-text">Current release</span>
+                              <div class="item-actions">
+                                <small>{{ nosql.current_release }}</small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point cyan-600" aria-hidden="true"></i>
+                              <span class="list-text">License</span>
+                              <div class="item-actions">
+                                <small>{{ license.name }}</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point red-600" aria-hidden="true"></i>
+                              <span class="list-text">Developer</span>
+                              <div class="item-actions">
+                                <small>{{ nosql.developer }} </small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="list-group-item">
+                            <div class="list-content">
+                              <i class="item-right wb-medium-point orange-600" aria-hidden="true"></i>
+                              <span class="list-text">Implement. Language</span>
+                              <div class="item-actions">
+                                <small>{{ nosql.implementation_language }}</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <hr>
+
+                       <table class="table table-bordered">
+                    <tbody>
+                      <tr>
+                        {% for datatype in datatypes %}
+                        <td>{{ datatype|title }}</td>
+                        {% if forloop.counter|divisibleby:3 %}
+                        </tr>
+                        <tr>
+                          {% endif %}
+                          {% endfor %}
+                      </tr>
+
+                    </tbody>
+                  </table>
+
+                    </div>
+
+                </div>
+              </div>
+                <!-- End summary and technical details -->
+
+
+
+                <!-- Global ratings -->
+                <div class="col-md-3">
+                  <div class="panel" style="box-shadow: 0px 2px 40px 0 rgba(0,0,0,0.1); border-radius: 10px; ">
+                    <div class="panel-heading">
+                      <div class="panel-actions" style="position: absolute; top: 25%; right: 0px; z-index: 1;-webkit-transform: translate(0,-50%);-ms-transform: translate(0,-50%);-o-transform: translate(0,-50%);transform: translate(0,-50%);">
+                        <span class="label label-primary" style="padding-left: 10px;padding-bottom: 10px;padding-top: 5px;padding-right: 10px;border-radius: 4px; background-color: #47E7C5;">{{ nosql.get_performance_rank.1 }}</span>
+                      </div>
+                      <h6 class="panel-title" style="padding-bottom: 10px;padding-top: 10px;font-size: 1em;color: #B5ADB3;">RATINGS</h6>
+                    </div>
+                    <div class="panel-body" style="padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+                      <div class="row" style="padding-bottom: -5;padding-bottom: 0px;">
+                        <div class="col-md-2" style="padding-left: 15px;padding-right: 0px;">
+                          <p style="font-size: 12px;margin-bottom: 0px;padding-top: 5px;color: #B5ADB3;">5</p>
+                        </div>
+                        <div class="col-md-10" style="padding-left: 0px;">
+                          <div class="progress progress-sm margin-top-10" data-goal="{{ buckets.4 }}" data-plugin="progress" style="margin-bottom: 12px;">
+                            <div class="progress-bar progress-bar-warning" aria-valuemin="15" aria-valuemax="115" aria-valuenow="{{ buckets.4 }}" role="progressbar"
+                            style="width: {{ buckets.4 }}%;background-color: #47E7C5;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row" style="padding-bottom: -5; padding-bottom: 0px;">
+                        <div class="col-md-2" style="padding-left: 15px; padding-right: 0px;">
+                          <p style="font-size: 12px;margin-bottom: 0px;padding-top: 5px;color: #B5ADB3;">4</p>
+                        </div>
+                        <div class="col-md-10" style="padding-left: 0px;">
+                          <div class="progress progress-sm margin-top-10" data-goal="{{ buckets.3 }}" data-plugin="progress" style="margin-bottom: 12px;">
+                            <div class="progress-bar progress-bar-warning" aria-valuemin="15" aria-valuemax="100" aria-valuenow="{{ buckets.3 }}" role="progressbar" style="width: {{ buckets.3 }}%;background-color: #8384D8;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="row" style="padding-bottom: -5;padding-bottom: 0px;">
+                        <div class="col-md-2" style="padding-left: 15px;padding-right: 0px;">
+                          <p style="font-size: 12px;margin-bottom: 0px;padding-top: 5px;color: #B5ADB3;">3</p>
+                        </div>
+                        <div class="col-md-10" style="padding-left: 0px;">
+                          <div class="progress progress-sm margin-top-10" data-goal="25" data-plugin="progress" style="margin-bottom: 12px;">
+                            <div class="progress-bar progress-bar-warning" aria-valuemin="15" aria-valuemax="115" aria-valuenow="14" role="progressbar" style="width: {{ buckets.2 }}%;background-color: #80CCE7;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row" style="padding-bottom: -5;padding-bottom: 0px;">
+                        <div class="col-md-2" style="padding-left: 15px;padding-right: 0px;">
+                          <p style="font-size: 12px;margin-bottom: 0px;padding-top: 5px;color: #B5ADB3;">2</p>
+                        </div>
+                        <div class="col-md-10" style="padding-left: 0px;">
+                          <div class="progress progress-sm margin-top-10" data-goal="25" data-plugin="progress" style="margin-bottom: 12px;">
+                            <div class="progress-bar progress-bar-warning" aria-valuemin="15" aria-valuemax="115" aria-valuenow="84" role="progressbar" style="width: {{ buckets.1 }}%;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row" style="padding-bottom: -5;padding-bottom: 0px;">
+                        <div class="col-md-2" style="padding-left: 15px;padding-right: 0px;">
+                          <p style="font-size: 12px;margin-bottom: 0px;padding-top: 5px;color: #B5ADB3;">1</p>
+                        </div>
+                        <div class="col-md-10" style="padding-left: 0px;">
+                          <div class="progress progress-sm margin-top-10" data-goal="25" data-plugin="progress" style="margin-bottom: 12px;">
+                            <div class="progress-bar progress-bar-warning" aria-valuemin="15" aria-valuemax="115" aria-valuenow="84" role="progressbar" style="width: {{ buckets.0 }}%;background-color: #E5727B;">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End global ratings -->
+
+                <!-- Wikipedia table -->
+                <div class="col-md-3">
+                  <div class="widget widget-shadow" style="box-shadow: 0px 2px 40px 0 rgba(0,0,0,0.1);">
+                    <div class="widget-content bg-white padding-20" style="padding-top: 10px!important;">
+                      <div style="width: 50px;margin: 0 auto;box-shadow:  0px 2px 40px 0 rgba(0,0,0,0.1);background-color: white;margin-top: -20px;padding-left: 5px;padding-right: 5px;padding-bottom: 5px;padding-top: 5px;border-radius: 6px;">
+                        <img src="{% static "assets/images/wiki-logo2.png" %}" style="width: 40px;margin: 0 auto;">
+                      </div>
+
+                      <div class="content-text margin-bottom-0" style="padding-bottom: 0px;padding-top: 10px;font-size: 10px;">
+                        <dl style="margin-bottom: 10px;">
+                          {% for key, value in wiki_table.items %}
+                          <dt>{{ key }} </dt>
+                          <dd>{{ value }}</dd>
+                          {% endfor %}
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Wikipedia table -->
+            </div>
+          </section>
+          <!-- END Summary Section -->
+
+
+          <!-- Sentiment Analysis Section -->
+          <section>
+            <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);">
+              <div class="panel-heading">
+                <h3 class="panel-title" id="section-4">Sentiment Analysis
+
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-md-2" style="padding-top: 30px;">
+                    <div class="row" style="padding-bottom: 15px;">
+                      <div class="col-md-6">
+                        <div style="width: 26px;height: 26px;text-align: center;border-color: #677ae4;border: 3px solid #e9595b!important;border-radius: 100%;padding-top: 3px;padding-bottom: 4px;font-size: 10px;margin-right: 5px;">
+                          <p style="margin-bottom: 11px;"></p>
+                        </div>
+                      </div>
+                      <div class="col-md-6" style="padding-left: 5px;padding-right: 15px;">
+                        <p style="padding-top: 5px;font-size: 12px;">NEGATIVE</p>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-bottom: 15px;">
+                      <div class="col-md-6">
+                        <div style="width: 26px;height: 26px;text-align: center;border-color: #36A2EB;border: 3px solid #36A2EB!important;border-radius: 100%;padding-top: 3px;padding-bottom: 4px;font-size: 10px;">
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="col-md-6" style="padding-left: 5px;">
+                        <p style="padding-top: 5px;font-size: 12px;">NEUTRAL</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div style="width: 26px;height: 26px;text-align: center;border-color: #677ae4;border: 3px solid #FFCE56!important;border-radius: 100%;padding-top: 3px;padding-bottom: 4px;font-size: 10px;">
+                          <p></p>
+                        </div>
+                      </div>
+                      <div class="col-md-6" style="padding-left: 5px;">
+                        <p style="padding-top: 5px;font-size: 12px;">POSITIVE</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4" style="padding-left: 0px;padding-right: 0px;">
+                    <div style="width: 300px; height: 270px;margin-right: 0px;padding-right: 30px;">
+                      <canvas id="chart-pie" width="270" height="243" style="display: block; width: 270px; height: 243px;">
+                    </div>
+                  </div>
+                  <div class="col-md-6" style="padding-left: 40px;padding-right: 0px;">
+                    <!--<table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Products</th>
+                          <th>Popularity</th>
+                          <th>Sales</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for alternative in good_performance %}
+                        <tr>
+                          <td>{{ forloop.counter }}</td>
+                          <td>{{ alternative.name }}</td>
+                          <td>
+                            <span class="peityLine" data-plugin="peityLine" style="display: none;">
+                              {% for comment in alternative.get_comments %}
+                                {{ comment }}{% if not forloop.last %},{% endif %}
+                              {% endfor %}
+                            </span>
+                          </td>
+                          <td>
+                            <span class="text-danger text-semibold">
+                              <i class="icon wb-chevron-down-mini" aria-hidden="true"></i>
+                              {{ alternative.get_performance_rank }}</span>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                        &lt;!&ndash;<tr>
+                          <td>2</td>
+                          <td>Air Conditioner</td>
+                          <td>
+                            <span class="peityLine" data-plugin="peityLine" style="display: none; width:44px; height:22px;">1,-1,-2,1,2,1,0,1,3,2</span>
+                          </td>
+                          <td>
+                            <span class="text-warning text-semibold"><i class="icon wb-chevron-down-mini" aria-hidden="true"></i>                            8.55%</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>RC Cars</td>
+                          <td>
+                            <span data-plugin="peityLine" style="display: none;">3,2,3,-1,-3,-1,0,2,4,5</span>
+                          </td>
+                          <td>
+                            <span class="text-success text-semibold"><i class="icon wb-chevron-up-mini" aria-hidden="true"></i>                            58.56%</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Down Coat</td>
+                          <td>
+                            <span data-plugin="peityLine" style="display: none;">1,-2,0,2,4,5,3,2,3,5</span>
+                          </td>
+                          <td>
+                            <span class="text-info text-semibold"><i class="icon wb-chevron-up-mini" aria-hidden="true"></i>                            35.76%</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>SLR Camera</td>
+                          <td>
+                            <span data-plugin="peityLine" style="display: none;">1,-1,0,2,3,1,-1,1,4,2</span>
+                          </td>
+                          <td>
+                            <span class="text-warning text-semibold"><i class="icon wb-chevron-down-mini" aria-hidden="true"></i>                            21.13%</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>Jacket</td>
+                          <td>
+                            <span data-plugin="peityLine" style="display: none;">4,2,-1,-3,-2,1,3,5,2,4</span>
+                          </td>
+                          <td>
+                            <span class="text-info text-semibold"><i class="icon wb-chevron-up-mini" aria-hidden="true"></i>                            26.88%</span>
+                          </td>
+                        </tr>&ndash;&gt;
+                      </tbody>
+                    </table>-->
+                  </div>
+                </div>
+
+                <div class="row" style="padding-top: 20px;">
+                  <div class="example-buttons" style="padding-left: 30px;">
+                    <a class="btn btn-primary collapsed" data-toggle="collapse" href="#exampleCollapseExample" aria-expanded="false" aria-controls="exampleCollapseExample" style=" background-color: rgb(103, 122, 228);border-color: rgb(103, 122, 228);box-shadow: 0 6px 10px rgba(0,0,0,.15);font-weight: 400;border-radius: 1000px;margin-right: 30px;">
+                      <i class="icon wb-thumb-up" aria-hidden="true" style="padding-right: 20px;"></i>
+                      Positive
+                    </a>
+                    <a class="btn btn-primary collapsed" data-toggle="collapse" href="#exampleCollapseExample" aria-expanded="false" aria-controls="exampleCollapseExample" style="background-color: rgb(103, 122, 228);border-color: rgb(103, 122, 228);box-shadow: 0 6px 10px rgba(0,0,0,.15);font-weight: 400;border-radius: 1000px;">
+                      <i class="icon wb-thumb-down" aria-hidden="true" style="padding-right: 20px;"></i>
+                      Negative
+                    </a>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="collapse in" id="exampleCollapseExample" aria-expanded="true" style="">
+                    <div class="comments-carousel">
+                      {% for comment in comments %}
+
+                         {% if comment.probability <= 0.60 %}
+                      <div class="col-md-4" style="padding-top: 20px;">
+                        <div class="widget widget-shadow" style="box-shadow: 0 6px 10px rgba(0,0,0,.15);border-radius: 7px;">
+                          <div class="widget-content bg-white padding-10" style="border-radius: 7px;background-color: #6F40F2;font-weight: 500;">
+                            <a class="avatar pull-left margin-right-20" href="javascript:void(0)">
+                              <img src="{% static "assets/images/neutral.png" %}" alt="" style="width: 30px;">
+                            </a>
+                            <div>
+                              <small class="pull-right grey-200">{{ comment.probability }}</small>
+                              <div class="grey-200 font-size-14 margin-bottom-10">Comment</div>
+                              <blockquote class="cover-quote font-size-14 white" style="padding-left: 30px;padding-top: 10px;margin-left: -15;margin-left: -15;margin-left: -10;padding-right: 10px;top: -30;top: -7;">
+                                {{ comment.body }}
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        {% elif comment.positive and comment.probability > 0.60 %}
+                          <div class="col-md-4" style="padding-top: 20px;">
+                            <div class="widget widget-shadow" style="box-shadow: 0 6px 10px rgba(0,0,0,.15);border-radius: 7px;">
+                              <div class="widget-content bg-white padding-10" style="border-radius: 7px;background-color: #3DF4AE;font-weight: 500;">
+                                <a class="avatar pull-left margin-right-20" href="javascript:void(0)">
+                                  <img src="{% static "assets/images/happy.png" %}" alt="" style="width: 30px;">
+                                </a>
+                                <div>
+                                  <small class="pull-right grey-200">{{ comment.probability }}</small>
+                                  <div class="grey-200 font-size-14 margin-bottom-10">Comment</div>
+                                  <blockquote class="cover-quote font-size-14 white" style="padding-left: 30px;padding-top: 10px;margin-left: -15;margin-left: -15;margin-left: -10;padding-right: 10px;top: -30;top: -7;">
+                                    {{ comment.body }}
+                                  </blockquote>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                       {% elif comment.positive == False and comment.probability > 0.60 %}
+                      <div class="col-md-4" style="padding-top: 20px;">
+                        <div class="widget widget-shadow" style="box-shadow: 0 6px 10px rgba(0,0,0,.15); border-radius: 7px;">
+                          <div class="widget-content bg-white padding-10" style="border-radius: 7px;background-color: #F24073;font-weight: 500;">
+                            <a class="avatar pull-left margin-right-20" href="javascript:void(0)">
+                              <img src="{% static "assets/images/sad.png" %}" alt="" style="width: 30px;">
+                            </a>
+                            <div>
+                              <small class="pull-right grey-200">{{ comment.probability }}</small>
+                              <div class="grey-200 font-size-14 margin-bottom-10">Comment</div>
+                              <blockquote class="cover-quote font-size-14 white" style="padding-left: 30px;padding-top: 10px;margin-left: -15;margin-left: -15;margin-left: -10;padding-right: 10px;top: -30;top: -7;">
+                                {{ comment.body }}
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {% endif %}
+                      {% endfor %}
+                      <!--<div class="col-md-4" style="padding-top: 20px;">
+                        <div class="widget widget-shadow" style="box-shadow: 0 6px 10px rgba(0,0,0,.15); border-radius: 7px;">
+                          <div class="widget-content bg-white padding-10" style="border-radius: 7px;background-color: #F24073;font-weight: 500;">
+                            <a class="avatar pull-left margin-right-20" href="javascript:void(0)">
+                              <img src="assets/images/sad.png" alt="" style="width: 30px;">
+                            </a>
+                            <div>
+                              <small class="pull-right grey-200">Yeserday, 13:48</small>
+                              <div class="grey-200 font-size-14 margin-bottom-10">Web Designer</div>
+                              <blockquote class="cover-quote font-size-14 white" style="padding-left: 30px;padding-top: 10px;margin-left: -15;margin-left: -15;margin-left: -10;padding-right: 10px;top: -30;top: -7;">
+                                Oportet magnopere optio ignavia tribuat derigatur, idem, vituperatum.
+                              </blockquote>
+                            </div>
+                          </div>
+                        </div>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- End Sentiment Analysis Section -->
+
+          <!-- Data Types Section -->
+            
+          <!-- END Data Types Section -->
+
+          <!-- Drivers Section -->
+          <section>
+            <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);">
+              <div class="panel-heading">
+                <h3 class="panel-title" id="section-3">Programming Languages
+
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div class="col-md-3">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Position</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><i class="fa  fa-arrow-up up" style="padding-right: 10px;color: #5bdd5e;"></i>Javascript</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><i class="fa  fa-arrow-up up" style="padding-right: 10px;color: #5bdd5e;"></i>Python</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Ruby</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Java</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>PHP</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td><i class="fa  fa-arrow-down up" style="padding-right: 10px;color: #ff6a7f;"></i>Perl</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td><i class="fa  fa-arrow-down up" style="padding-right: 10px;color: #ff6a7f;"></i>C</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-9">
+                  <canvas id="myChart" width="400" height="250"></canvas>
+                </div>
+                <div class="col-md-12" style="margin-top: 20px;margin-bottom: 20px;">
+                  <div class="chart-color">
+                    <hr>
+                    <span style="padding-right: 20px;">
+                      <i class="wb-large-point" style="display: inline-block;width: 12px;height: 12px;border-radius: 50%; color:#F7DA64!important;"></i>
+                      <small><p style="display: inline-block;">Community-Supported Driver</p></small>
+                    </span>
+                    <span style="padding-right: 20px;">
+                      <i class="bg-green-600" style="display: inline-block;width: 12px;height: 12px;border-radius: 50%;"></i>
+                      <small><p style="display: inline-block;">Official driver</p></small>
+                    </span>
+                    <span>
+                      <i class="bg-red-600" style="display: inline-block;width: 12px;height: 12px;border-radius: 50%;"></i>
+                      <small><p style="display: inline-block;">Inofficial driver</p></small>
+                    </span>
+                  </div>
+                </div>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      {% for driver in drivers %}
+                      <td>
+                        {% if driver.status == 1 %}
+                         <i class="item-right wb-medium-point bg-green-600" style="display: inline-block;width: 12px;height: 12px;border-radius: 50%;"></i>
+                        {% elif driver.status == 2 %}
+                          <i class="item-right wb-medium-point" aria-hidden="true" style="float: left;color:#F7DA64!important;"></i>
+                        {% elif driver.status == 3 %}
+                          <i class="item-right wb-medium-point red-600" aria-hidden="true" style="float: left;"></i>
+                        {% else %}
+                          <i></i>
+                        {% endif %}
+                        {{ driver.name }}</td>
+
+                      {% if forloop.counter|divisibleby:3 %}
+                        </tr>
+                        <tr>
+                      {% endif %}
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>      
+          </section>
+          <!--  END Drivers Section -->
+
+          <!-- Related Technologies Section -->
+          <section>
+            <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);">
+              <div class="panel-heading">
+                <h3 class="panel-title" id="section-4">Related Technologies
+                </h3>
+              </div>
+              <div class="panel-body">
+                <canvas id="chart2" width="700" height="300">
+              </div>
+            </div>
+          </section>
+          <!-- END Related Technologies Section -->
+
+
+          <!-- Sentiment Analysis Section -->
+          <section>
+              
+          </section>
+          <!-- END Related Technologies Section -->
+
+          <!-- Similar Nosql Comparisions -->
+          <section>
+            <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);">
+              <div class="panel-heading">
+                <h3 class="panel-title" id="section-7">Popularity
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div class="col-ms-12 col-xs-12 col-md-12" id="ecommerceChartView">
+                  <div class="widget widget-shadow">
+                    <div class="widget-header padding-20">
+                      <div class="btn-group dropdown chart-menu">
+                        <button type="button" class="btn btn-outline btn-default dropdown-toggle" data-toggle="dropdown">
+                          PERFORMANCE
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu animate" role="menu">
+                          <li role="presentation">
+                            <a href="#" role="menuitem">Sales</a>
+                          </li>
+                          <li role="presentation">
+                            <a href="#" role="menuitem">Total sales</a>
+                          </li>
+                          <li role="presentation">
+                            <a href="#" role="menuitem">profit</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <ul class="nav nav-pills nav-pills-rounded chart-action" data-plugin="nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#scoreLineToDay" aria-expanded="true">Same model</a></li>
+                        <li class=""><a data-toggle="tab" href="#scoreLineToWeek" aria-expanded="false">More Popular</a></li>
+                        <li class=""><a data-toggle="tab" href="#scoreLineToMonth" aria-expanded="false">Similar</a></li>
+                      </ul>
+                    </div>
+                    <div class="widget-content tab-content bg-white padding-20">
+                      <div class="ct-chart tab-pane active" id="scoreLineToDay">
+                        <div class="chartist-tooltip" style="display: none; top: 98px; left: 567px;">4000</div>
+                      </div>
+                      <div class="ct-chart tab-pane" id="scoreLineToWeek">
+                        <div class="chartist-tooltip" style="display: none; top: 53px; left: 554px;">20000</div>
+                      </div>
+                      <div class="ct-chart tab-pane" id="scoreLineToMonth">
+                        <div class="chartist-tooltip" style="display: none; top: 107px; left: 897px;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="productOptionsData" class="text-center">
+                  <div class="row no-space">
+                    <!-- The First Counter Block-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12">
+                      <div class="counter">
+                        <div class="counter-label"><small>No. Repositories in Github</small></div>
+                        <div class="counter-number-group text-truncate">
+                          <span class="counter-number-related red-600">+</span>
+                          <span class="counter-number">{{ nosql.amount_repos }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End The First Counter Block-->
+
+                    <!-- The Second Counter Block-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12">
+                      <div class="counter">
+                        <div class="counter-label"><small>Stackoverflow Followers<small></small></small></div>
+                        <div class="counter-number-group text-truncate">
+                          <span class="counter-number-related green-600">-</span>
+                          <span class="counter-number">{{ nosql.stackoverflow_followers }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End The Second Counter Block-->
+
+                    <!-- The Third Counter Block-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12">
+                      <div class="counter">
+                        <div class="counter-label"><small>Questions in Stackoverflow<small></small></small></div>
+                        <div class="counter-number-group text-truncate">
+                          <span class="counter-number-related green-600">-</span>
+                          <span class="counter-number">{{ nosql.amount_stackoverflow_questions }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End The Third Counter Block-->
+
+                    <!-- The fourth Counter Block-->
+                    <div class="col-lg-3 col-sm-6 col-xs-12">
+                      <div class="counter">
+                        <div class="counter-label"><small>Stackshare Votes<small></small></small></div>
+                        <div class="counter-number-group text-truncate">
+                          <span class="counter-number-related red-600">+</span>
+                          <span class="counter-number">{{ nosql.stackshare_votes }}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End The fourth Counter Block-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- END Similar Nosql Comparisions -->
+
+          <!-- URLs Sections -->
+          <section>
+            <div class="panel" style="box-shadow: 0px 9px 30px 0px rgba(44,55,79,0.07);">
+              <div class="panel-heading">
+                <h3 class="panel-title" id="section-4">Useful Links
+                </h3>
+              </div>
+              <div class="panel-body">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="dataTables_length" id="DataTables_Table_0_length"></div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div id="DataTables_Table_0_filter" class="dataTables_filter"></div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <table class="table table-bordered dataTable width-full " data-plugin="dataTable" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 1166px;">
+                        <thead>
+                          <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 218px;" aria-label="Rank: activate to sort column descending" aria-sort="ascending">Rank</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 270px;" aria-label="URL: activate to sort column ascending">URL</th>
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 240px;" aria-label="Rating: activate to sort column ascending">Rating</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for link in links %}
+                          <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td><a href="{{ link.url}}">{{ link.title }}</a></td>
+                            <td>{{ link.number_backlinks }}</a></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-7">
+                      <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- END URLs Sections -->
+
+          <div class="article-footer margin-top-40">
+            <div class="article-footer-actions">
+              <button type="button" class="btn btn-primary">Yes</button>
+              <button type="button" class="btn btn-outline btn-primary">No</button>
+            </div>
+            Was this article helpful to you ?
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="site-footer" style="margin: 0 auto;">
+    <div class="site-footer-legal">© 2016 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">Remark</a></div>
+    <div class="site-footer-right">
+      Crafted with <i class="red-600 wb wb-heart"></i> by <a href="http://themeforest.net/user/amazingSurge">amazingSurge</a>
+    </div>
+  </footer>
+  <!-- Core  -->
+  <script src="{% static "global/vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "global/vendor/bootstrap/bootstrap.min.js" %}"></script>
+  <script src="{% static "global/vendor/animsition/animsition.min.js" %}"></script>
+  <script src="{% static "global/vendor/asscroll/jquery-asScroll.min.js" %}"></script>
+  <script src="{% static "global/vendor/mousewheel/jquery.mousewheel.min.js" %}"></script>
+  <script src="{% static "global/vendor/asscrollable/jquery.asScrollable.all.min.js" %}"></script>
+  <script src="{% static "global/vendor/ashoverscroll/jquery-asHoverScroll.min.js" %}"></script>
+
+  <!-- Plugins -->
+  <script src="{% static "global/vendor/switchery/switchery.min.js" %}"></script>
+  <script src="{% static "global/vendor/intro-js/intro.min.js" %}"></script>
+  <script src="{% static "global/vendor/screenfull/screenfull.min.js" %}"></script>
+  <script src="{% static "global/vendor/slidepanel/jquery-slidePanel.min.js" %}"></script>
+
+  <!-- Plugins For This Page -->
+  <script src="{% static "global/vendor/bootstrap-select/bootstrap-select.min.js" %}"></script>
+  <script src="{% static "global/vendor/chart-js/Chart.js" %}"></script>
+  <script src="{% static "global/vendor/chartist-js/chartist.min.js" %}"></script>
+  <script src="{% static "global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js" %}"></script>
+  <script src="{% static "global/vendor/raty/jquery.raty.js" %}"></script>
+  <script src="{% static "global/vendor/owl-carousel/owl.carousel.min.js" %}"></script>
+  <script src="{% static "global/vendor/slick-carousel/slick.min.js" %}"></script>
+  <script src="{% static "global/vendor/peity/jquery.peity.min.js" %}"></script>
+
+  <!-- Plugins for tables -->
+  <script src="{% static "global/vendor/datatables/jquery.dataTables.min.js" %}"></script>
+  <script src="{% static "global/vendor/datatables-fixedheader/dataTables.fixedHeader.js" %}"></script>
+  <script src="{% static "global/vendor/datatables-bootstrap/dataTables.bootstrap.min.js" %}"></script>
+  <script src="{% static "global/vendor/datatables-responsive/dataTables.responsive.js" %}"></script>
+  <script src="{% static "global/vendor/datatables-tabletools/dataTables.tableTools.js" %}"></script>
+  <script src="{% static "global/vendor/asrange/jquery-asRange.min.js" %}"></script>
+  <script src="{% static "global/vendor/bootbox/bootbox.js" %}"></script>
+
+
+  <!-- Scripts -->
+  <script src="{% static "global/js/core.min.js" %}"></script>
+  <script src="{% static "assets/js/site.min.js" %}"></script>
+
+  <script src="{% static "assets/js/sections/menu.min.js" %}"></script>
+  <script src="{% static "assets/js/sections/menubar.min.js" %}"></script>
+  <script src="{% static "assets/js/sections/sidebar.min.js" %}"></script>
+
+  <script src="{% static "global/js/configs/config-colors.min.js" %}"></script>
+  <script src="{% static "assets/js/configs/config-tour.min.js" %}"></script>
+
+  <script src="{% static "global/js/components/asscrollable.min.js" %}"></script>
+  <script src="{% static "global/js/components/animsition.min.js" %}"></script>
+  <script src="{% static "global/js/components/slidepanel.min.js" %}"></script>
+  <script src="{% static "global/js/components/switchery.min.js" %}"></script>
+
+  <script src="{% static "global/js/components/bootstrap-select.min.js" %}"></script>
+
+
+  <script src="{% static "assets/js/app.min.js" %}"></script>
+
+  <script src="{% static "assets/examples/js/apps/documents.min.js" %}"></script>
+  <script src="{% static "global/js/components/datatables.min.js" %}"></script>
+  <script src="{% static "assets/examples/js/tables/datatable.min.js" %}"></script>
+  <script src="{% static "global/js/components/raty.min.js" %}"></script>
+  <script src="{% static "global/js/components/owl-carousel.min.js" %}"></script>
+  <script src="{% static "assets/examples/js/uikit/carousel.min.js" %}"></script>
+  <script src="{% static "global/js/components/peity.min.js" %}"></script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+
+    ga('create', 'UA-65522665-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script>
+  var ctx = document.getElementById("myChart");
+
+
+  var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [
+              {% for driver in main_drivers %}
+              "{{ driver.name }}"{% if not forloop.last %},{% endif %}
+              {% endfor %}
+            ],
+            datasets: [{
+                  label: '# of Votes',
+                  data: [
+                    {% for driver in main_drivers %}
+                    {{ driver.amount_repos }}{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                  ],
+                  backgroundColor: [
+                    '#62a8ea',
+                    '#7dd3ae',
+                    '#fa7a7a',
+                    '#926dde',
+                      '#f7da64',
+                      '#677ae4'
+                  ],
+                  borderColor: [
+                    '#62a8ea',
+                    '#7dd3ae',
+                    '#fa7a7a',
+                    '#926dde',
+                      '#f7da64',
+                      '#677ae4'
+                  ],
+                  borderWidth: 3
+              }]
+        },
+
+        options: {
+          legend: {
+          display: false
+      },
+      tooltips: {
+          callbacks: {
+             label: function(tooltipItem) {
+                    return tooltipItem.yLabel;
+             }
+          }
+      },
+
+
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    },
+                    gridLines: {
+                      display: true,
+                      lineWidth: 0.4,
+                      drawTicks: true
+                  },
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Amount of Repos in Github"
+                  }
+                }],
+                xAxes: [{
+                  gridLines: {
+                      display:false
+                  }
+                }]
+            }
+        }
+    });
+
+    var ctx2 = document.getElementById("chart2");
+    var myChart = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: [
+              {% for name, val in technologies %}
+              "{{ name }}"{% if not forloop.last %},{% endif %}
+              {% endfor %}
+            ],
+            datasets: [{
+                  label: '# of Votes',
+                  data: [
+                    {% for name, val in technologies %}
+                    {{ val }}{% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                  ],
+                  backgroundColor: [
+                      '#47E7C5',
+                      '#8485D7',
+                      '#80CCE7',
+                      '#FAD878',
+                      '#E25862',
+                      '#F8A20F',
+                      '#E4679B',
+                      '#6788E4',
+                      '#67E499',
+                      '#68F9EC'
+                  ],
+                  borderColor: [
+                    '#47E7C5',
+                    '#8485D7',
+                    '#80CCE7',
+                    '#FAD878',
+                    '#E25862',
+                    '#F8A20F',
+                    '#E4679B',
+                    '#6788E4',
+                    '#67E499',
+                    '#68F9EC'
+                  ],
+                  borderWidth: 1
+              }]
+        },
+
+        options: {
+          legend: {
+          display: false
+      },
+      tooltips: {
+          callbacks: {
+             label: function(tooltipItem) {
+                    return tooltipItem.yLabel;
+             }
+          }
+      },
+
+
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true
+                    },
+                    gridLines: {
+                      display: true,
+                      lineWidth: 0.4,
+                      drawTicks: true
+                  },
+                  scaleLabel: {
+                    display: true,
+                    labelString: "Amount of Repos in Github"
+                  }
+                }],
+                xAxes: [{
+                  gridLines: {
+                      display:false
+                  }
+                }]
+            }
+        }
+    });
+
+  </script>
+
+  <script>
+  $(document).ready(function($) {
+  Site.run(), function() {
+      !function() {
+          var scoreChart=function(id, labelList, series1List, series2List) {
+              var scoreChart=new Chartist.Line("#"+id, {
+                  labels: labelList, series: [series1List, series2List]
+              }
+              , {
+                  lineSmooth:Chartist.Interpolation.simple( {
+                      divisor: 2
+                  }
+                  ), fullWidth:!0, chartPadding: {
+                      right: 25
+                  }
+                  , series: {
+                      "series-1": {
+                          showArea: !0
+                      }
+                      , "series-2": {
+                          showArea: !0
+                      }
+                  }
+                  , axisX: {
+                      showGrid: !1
+                  }
+                  , axisY: {
+                      labelInterpolationFnc:function(value) {
+                          return value/1e3+"K"
+                      }
+                      , scaleMinSpace:40
+                  }
+                  , plugins:[Chartist.plugins.tooltip()], low:0, height:300
+              }
+              );
+              scoreChart.on("created", function(data) {
+                  var defs=data.svg.querySelector("defs")||data.svg.elem("defs"), filter=(data.svg.width(), data.svg.height(), defs.elem("filter", {
+                      x: 0, y: "-10%", id: "shadow"+id
+                  }
+                  , "", !0));
+                  return filter.elem("feGaussianBlur", {
+                      "in": "SourceAlpha", stdDeviation: "8", result: "offsetBlur"
+                  }
+                  ), filter.elem("feOffset", {
+                      dx: "0", dy: "10"
+                  }
+                  ), filter.elem("feBlend", {
+                      "in": "SourceGraphic", mode: "multiply"
+                  }
+                  ), defs
+              }
+              ).on("draw", function(data) {
+                  if("line"===data.type)data.element.attr( {
+                      filter: "url(#shadow"+id+")"
+                  }
+                  );
+                  else if("point"===data.type) {
+                      var parent=new Chartist.Svg(data.element._node.parentNode);
+                      parent.elem("line", {
+                          x1: data.x, y1: data.y, x2: data.x+.01, y2: data.y, "class": "ct-point-content"
+                      }
+                      )
+                  }
+                  ("line"===data.type||"area"==data.type)&&data.element.animate( {
+                      d: {
+                          begin: 1e3*data.index, dur: 1e3, from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(), to: data.path.clone().stringify(), easing: Chartist.Svg.Easing.easeOutQuint
+                      }
+                  }
+                  )
+              }
+              )
+          }
+          , DayLabelList=[{% for n in same_model %}"{{ n.name }}"{% if not forloop.last %},{% endif %}{% endfor %}],
+
+          DaySeries1List= {
+              name: "repositories", data: [{% for n in same_model %}"{{ n.amount_repos }}"{% if not forloop.last %},{% endif %}{% endfor %}]
+          }
+          , DaySeries2List= {
+              name: "questions", data: [{% for n in same_model %}"{{ n.amount_stackoverflow_questions }}"{% if not forloop.last %},{% endif %}{% endfor %}]
+          }
+
+          , WeekLabelList=[{% for n in more_popular %}"{{ n.name }}"{% if not forloop.last %},{% endif %}{% endfor %}],
+
+          WeekSeries1List= {
+              name: "repositories", data: [{% for n in more_popular %}"{{ n.amount_repos }}"{% if not forloop.last %},{% endif %}{% endfor %}]
+          }
+          , WeekSeries2List= {
+              name: "series-2", data: [{% for n in more_popular %}"{{ n.stackoverflow_followers }}"{% if not forloop.last %},{% endif %}{% endfor %}]
+          }
+          , MonthLabelList=["AUG", "SEP", "OTC", "NOV", "DEC", "JAN", "FEB"], MonthSeries1List= {
+              name: "series-1", data: [1e5, 5e5, 3e5, 7e5, 1e5, 2e5, 7e5]
+          }
+          , MonthSeries2List= {
+              name: "series-2", data: [3e5, 4e5, 2e5, 6e5, 8e5, 6e5, 3e5]
+          }
+          , createChart=function(button) {
+              var btn=button||$("#ecommerceChartView .chart-action").children(".active"), chartId=btn.children("a").attr("href");
+              switch(chartId) {
+                  case"#scoreLineToDay": scoreChart("scoreLineToDay", DayLabelList, DaySeries1List, DaySeries2List);
+                  break;
+                  case"#scoreLineToWeek": scoreChart("scoreLineToWeek", WeekLabelList, WeekSeries1List, WeekSeries2List);
+                  break;
+                  case"#scoreLineToMonth": scoreChart("scoreLineToMonth", MonthLabelList, MonthSeries1List, MonthSeries2List)
+              }
+          }
+          ;
+          createChart(), $(".chart-action li").on("click", function() {
+              createChart($(this))
+          }
+          )
+      }
+      (), function() {
+          var barChart=new Chartist.Bar(".barChart", {
+              labels: ["JAN", "FEB", "MAR", "APR", "MAY"], series: [[630, 700, 500, 400, 780], [400, 800, 700, 500, 700]]
+          }
+          , {
+              axisX: {
+                  showGrid: !1
+              }
+              , axisY: {
+                  showGrid: !1, scaleMinSpace: 30
+              }
+              , height:220, seriesBarDistance:24
+          }
+          );
+          barChart.on("draw", function(data) {
+              if("bar"===data.type) {
+                  var parent=new Chartist.Svg(data.element._node.parentNode);
+                  parent.elem("line", {
+                      x1: data.x1, x2: data.x2, y1: data.y2, y2: 0, "class": "ct-bar-fill"
+                  }
+                  )
+              }
+          }
+          )
+      }
+      ()
+  }
+  ()
+}
+
+);
+  </script>
+  <script>
+  var ctx3 = document.getElementById("chart-pie");
+  var pieOptions = {
+  legend: {
+          display: false
+      },
+  animateScale : true
+};
+  var data = {
+    labels: [
+        "Negative",
+        "Neutral",
+        "Positive"
+    ],
+    datasets: [
+        {
+            data: [
+            {% for e in evaluation %}
+                    {{ e }}{% if not forloop.last %},{% endif %}
+            {% endfor %}
+            ],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56"
+            ]
+        }]
+};
+
+
+ var myPieChart = new Chart(ctx3,{
+     type: 'pie',
+     data: data,
+     options: pieOptions
+ });
+  </script>
+
+  <script>
+    $('.comments-carousel').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3
+    });
+  </script>
+
+
+
+</body>
+
+</html>

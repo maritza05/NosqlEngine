@@ -1,0 +1,588 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap material admin template">
+  <meta name="author" content="">
+
+  <title>Catalog | NoSQL Engine</title>
+
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static "global/css/bootstrap.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/css/bootstrap-extend.min.css"  %}">
+  <link rel="stylesheet" href="{% static "assets/css/material/site.min.css"  %}">
+
+  <!-- Skin tools (demo site only) -->
+  <link rel="stylesheet" href="{% static "global/css/skintools.min.css"  %}">
+  <script src="{% static "assets/js/sections/skintools.min.js"  %}"></script>
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="{% static "global/vendor/animsition/animsition.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/asscrollable/asScrollable.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/switchery/switchery.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/intro-js/introjs.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/slidepanel/slidePanel.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/flag-icon-css/flag-icon.min.css"  %}">
+  <link rel="stylesheet" href="{% static "assets/css/material/waves.min.css"  %}">
+
+  <!-- Plugins For This Page -->
+  <link rel="stylesheet" href="{% static "global/vendor/nprogress/nprogress.min.css"  %}">
+  <link rel="stylesheet" href="{% static "global/vendor/ladda-bootstrap/ladda.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/cards-design/cards-design.css" %}">
+  <link rel="stylesheet" href="{% static "global/vendor/jquery-labelauty/jquery-labelauty.min.css" %}">
+
+
+  <!-- Page -->
+  
+  <link rel="stylesheet" href="{% static "assets/examples/css/advanced/animation.min.css"  %}">
+  <link rel="stylesheet" href="{% static "assets/examples/css/advanced/rating.min.css" %}">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="{% static "assets/css/material/material-design.min.css" %}">
+  <link rel="stylesheet" href="{% static "assets/css/material/brand-icons.min.css" %}">
+  <link rel='stylesheet' href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,700">
+  <link rel="stylesheet" href="{% static "global/fonts/web-icons/web-icons.min.css" %}">
+  <link rel="stylesheet" href="{% static "global/fonts/brand-icons/brand-icons.min.css" %}">
+  
+  <link rel='stylesheet' href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
+  <link rel="stylesheet" href="{% static "global/fonts/themify-icons/themify-icons.css" %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+
+  <!--[if lt IE 9]>
+    <script src="../global/vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../global/vendor/media-match/media.match.min.js"></script>
+    <script src="../global/vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script src="{% static "global/vendor/modernizr/modernizr.min.js" %}"></script>
+  <script src="{% static "global/vendor/breakpoints/breakpoints.min.js" %}"></script>
+  <!--<script src="https://use.fontawesome.com/6e0bf419fe.js"></script>-->
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="dashboard">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega navbar-inverse bg-indigo-600"
+  role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+      data-toggle="menubar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse"
+      data-toggle="collapse">
+        <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+      </button>
+      <div class="navbar-brand navbar-brand-center">
+        <span class="navbar-brand-text hidden-xs">NoSQL Engine</span>
+      </div>
+      <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
+      data-toggle="collapse">
+        <span class="sr-only">Toggle Search</span>
+        <i class="icon wb-search" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="navbar-container container-fluid">
+      <!-- Navbar Collapse -->
+      <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+        <!-- Navbar Toolbar -->
+        <ul class="nav navbar-toolbar">
+          <li class="hidden-float" id="toggleMenubar">
+            <a data-toggle="menubar" href="#" role="button">
+              <i class="icon hamburger hamburger-arrow-left">
+                  <span class="sr-only">Toggle menubar</span>
+                  <span class="hamburger-bar"></span>
+                </i>
+            </a>
+          </li>
+          <li class="hidden-xs" id="toggleFullscreen">
+            <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+              <span class="sr-only">Toggle fullscreen</span>
+            </a>
+          </li>
+          <li class="hidden-float">
+            <a class="icon wb-search" data-toggle="collapse" href="#" data-target="#site-navbar-search"
+            role="button">
+              <span class="sr-only">Toggle Search</span>
+            </a>
+          </li>
+          
+        </ul>
+        <!-- End Navbar Toolbar -->
+
+        
+      </div>
+      <!-- End Navbar Collapse -->
+
+      <!-- Site Navbar Seach -->
+      <div class="collapse navbar-search-overlap" id="site-navbar-search">
+        <form role="search">
+          <div class="form-group">
+            <div class="input-search">
+              <i class="input-search-icon wb-search" aria-hidden="true"></i>
+              <input type="text" class="form-control" id="name" name="site-search" placeholder="Search...">
+              <button type="button" class="input-search-close icon wb-close" data-target="#site-navbar-search"
+              data-toggle="collapse" aria-label="Close"></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Site Navbar Seach -->
+    </div>
+  </nav>
+  <div class="site-menubar">
+    <div class="site-menubar-body">
+      <div>
+        <div>
+          <form action="{% url 'nosql:search_form' %}" method="post">
+            {% csrf_token %}
+          <ul class="site-menu">
+            <li class="site-menu-category" style="margin-top:0;">Search Criteria</li>
+            
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-view-compact" aria-hidden="true"></i>
+                <span class="site-menu-title">Data Models</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+
+                {% for data_model in datamodels %}
+                <li class="site-menu-item">
+                  <div class="checkbox-custom checkbox-primary" style="padding-left: 40px">
+                    <input type="checkbox" id="{{ data_model.slug }}" name="datamodel" value="{{ data_model.name }}">
+                    <label for="{{ data_model.slug }}">{{ data_model.name }}</label>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-code-setting" aria-hidden="true"></i>
+                <span class="site-menu-title">Programming Lang.</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                {% for driver in languages %}
+               <li class="site-menu-item">
+                  <div class="checkbox-custom checkbox-primary" style="padding-left: 40px">
+                    <input type="checkbox" id="{{ driver }}" name="driver" value="{{ driver }}">
+                    <label for="{{ driver }}">{{ driver }}</label>
+                  </div>
+                </li>
+               {% endfor %}
+               
+              </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon md-assignment-check" aria-hidden="true"></i>
+                <span class="site-menu-title">Licenses</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                {% for license in licenses %}
+               <li class="site-menu-item">
+                  <div class="checkbox-custom checkbox-primary" style="padding-left: 40px">
+                    <input type="checkbox" id="{{ license }}" name="license" value="{{ license }}" >
+                    <label for="{{ license }}">{{ license|title }}</label>
+                  </div>
+                </li>
+               {% endfor %}
+              </ul>
+            </li>
+            <li class="site-menu-item has-sub">
+              <a href="javascript:void(0)">
+                <i class="site-menu-icon icon md-thumb-up" aria-hidden="true"></i>
+                <span class="site-menu-title">User Review</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+               <li class="site-menu-item" style="text-align: center;">
+                  <div class="rating rating-lg" data-score="4" data-plugin="rating" style="cursor: pointer;"></div>
+                  <label>&amp; Up (20)</label>
+
+      
+                </li>
+                             
+              </ul>
+            </li>
+            <li class="site-menu-item" style="text-align: center; padding-top: 30px;">
+            <input type="submit" class="btn btn-primary" value="Search" />
+            </li>
+            
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="site-menubar-footer">
+      <a href="javascript: void(0);" class="fold-show" data-placement="top" data-toggle="tooltip"
+      data-original-title="Settings">
+        <span class="icon md-settings" aria-hidden="true"></span>
+      </a>
+      <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Lock">
+        <span class="icon md-eye-off" aria-hidden="true"></span>
+      </a>
+      <a href="javascript: void(0);" data-placement="top" data-toggle="tooltip" data-original-title="Logout">
+        <span class="icon md-power" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Page -->
+  <div class="page animsition">
+    <div class="page-header">
+      <ol class="breadcrumb">
+        <li><a href="../index.html">Home</a></li>
+        <li class="active">Catalog</li>
+      </ol>
+
+      <h1 class="page-title">Catalog</h1>
+      <div class="page-header-actions">
+        <div class="example">
+          <span class="badge badge-default">11</span><span style="margin-right: 20px;margin-left: 5px;">Data Model</span>
+          <span class="badge badge-primary">12</span><span style="margin-right: 20px;margin-left: 5px;">Column oriented</span>
+          <span class="badge badge-success">13</span><span style="margin-right: 20px;margin-left: 5px;">Graph</span>
+          <span class="badge badge-info">14</span><span style="margin-right: 20px;margin-left: 5px;">Query oriented</span>
+          <span class="badge badge-warning">15</span>
+          <span class="badge badge-danger">16</span>
+          <span class="badge badge-dark">17</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-content container-fluid">
+
+
+    {% for nosql in nosqls %}
+        {% if forloop.first %}<div class="row">{% endif %}
+        <div class="col-md-4">
+          <div class="card">
+
+            <div class="front">
+              <div class="panel">
+                <div class="panel-heading">
+                  <ul class="list-inline pull-right" style="margin-top: 10px;">
+                    <li style="padding-right: 0px;">
+                     <span class="icon wb-large-point blue-600 margin-right-5" style="font-size: 20px;color: #FFB83C !important;">
+                     </span>
+                    </li>
+                    <li style="padding-left: 0px; padding-right: 0px;">
+                      <span class="icon wb-large-point purple-600 margin-right-5" style="font-size: 20px;color: #2AD55D !important;"></span>
+                    </li>
+                    <li style="padding-left: 0px;">
+                      <span class="icon wb-large-point blue-grey-300 margin-right-5" style="font-size: 20px;color: #BE5AE8 !important;"></span>
+                    </li>
+                  </ul>
+
+                  <h3 class="panel-title" style="padding-bottom: 10px;">{{ nosql.name }}</h3>
+                </div>
+                <div class="panel-body" style="padding-bottom: 10px;">
+                  <div class="rating" data-score="{{ nosql.get_rank }}" data-half="true" data-plugin="rating" style="cursor: pointer; padding-bottom: 10px;padding-top: 0px;"></div>
+                  <p style="font-size:  0.95em;">
+                    {{ nosql.get_summary|truncatewords:30|linebreaks  }}
+                  </p>
+                  <div style="text-align: center;padding-bottom: 15px;">
+                    <a href="{{ nosql.get_absolute_url }}" class="btn btn-raised btn-primary btn-sm btn-block" style="width: 30%;display: inline-block;">More...</a>
+                  </div>
+                  <div>
+                    <i class="icon wb-reply" aria-hidden="true" style="font-size: 13px;float: left;color: #ccd5db;padding-right: 10px;"></i>
+                    <p class="blue-grey-400" style="font-size: 10px;margin-bottom: 2px;">Check the quality attributes</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="back">
+              <div class="panel">
+                <div class="panel-heading">
+                  <ul class="list-inline pull-right" style="margin-top: 10px;">
+                      <li style="padding-right: 0px;">
+                        <span class="icon wb-large-point blue-600 margin-right-5" style="font-size: 20px;color: #FFB83C !important;"></span>
+                      </li>
+                      <li style="padding-left: 0px; padding-right: 0px;">
+                        <span class="icon wb-large-point purple-600 margin-right-5" style="font-size: 20px;color: #2AD55D !important;"></span>
+                      </li>
+                      <li style="padding-left: 0px;">
+                        <span class="icon wb-large-point blue-grey-300 margin-right-5" style="font-size: 20px;color: #BE5AE8 !important;"></span>
+                      </li>
+                    </ul>
+                  <h3 class="panel-title">Quality Attributes </h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row" style="padding-bottom: 12px;padding-left: 20px;">
+                    <div class="col-md-4">
+                      <h6>Performance</h6>
+
+                    </div>
+                    <div class="col-md-8">
+                      <div class="rating" data-read-only="true" data-score="{{ nosql.get_performance_rank.1 }}" data-half="true" data-plugin="rating" style="cursor: pointer; padding-bottom: 10px; padding-top: 0px; "></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+      {% endfor %}
+
+
+
+      <!--<div class="row">
+        <div class="col-sm-4">
+          <div class="flip-container">
+            <div class="flipper">
+              <div class="front">
+                <div class="panel panel-danger panel-bordered animation-fade" data-plugin="appear" data-animate="fade">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" style="padding-right: 20px; padding-left: 20px;">Panel With Tool</h3>
+                    <div class="panel-actions">
+                      <button type="button" class="btn btn-pure btn-default icon wb-refresh" onclick="flip()" style="color: #FFFFFF;"></button>
+                    </div>
+                  </div>
+                  <div class="panel-body" style="padding-left: 20px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px; font-size: 0.95em;height: 216px;">
+                    MongoDB Enterprise Advanced features MongoDB Enterprise Server and
+                    a finely-tuned package of advanced software, support, certifications, and other services.
+                    More than one-third of the Fortune 100 rely on MongoDB Enterprise Advanced to help
+                    run their mission critical applications.
+                    <button type="button" class="btn btn-danger ladda-button center-block" data-style="expand-right" data-plugin="ladda" style="margin-top: 20px;">
+                      <span class="ladda-label">More...</span>
+                      <span class="ladda-spinner"></span><span class="ladda-spinner"></span><span class="ladda-spinner"></span>
+                      <span class="ladda-spinner"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="back" style="width: 100%;">
+                <div class="panel panel-danger panel-bordered animation-fade" data-plugin="appear" data-animate="fade">
+                  <div class="panel-heading">
+                    <h3 class="panel-title" style="padding-right: 20px; padding-left: 20px;">Panel With Tool</h3>
+                    <div class="panel-actions">
+                      <button type="button" class="btn btn-pure btn-default icon wb-refresh" onclick="flip()" style="color: #FFFFFF;"></button>
+                    </div>
+                  </div>
+                  <div class="panel-body" style="padding-left: 20px;padding-right: 20px;padding-top: 20px;padding-bottom: 20px; font-size: 0.95em;height: 216px;">
+                    <div class="col-sm-12">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="progress-title">Numbers</div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="rating" data-score="4" data-number="5" data-read-only="true" data-plugin="rating" title="good" style="margin-bottom: 22px;"></div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="progress-title">Numbers</div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="progress" data-goal="60" data-plugin="progress" style="margin-bottom: 18px;">
+                            <div class="progress-bar progress-bar-success" aria-valuemin="15" aria-valuemax="115" aria-valuenow="25" role="progressbar" style="width: 10%;">
+                              <span class="progress-label">25</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="progress-title">Numbers</div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="progress" data-goal="60" data-plugin="progress" style="margin-bottom: 18px;">
+                            <div class="progress-bar progress-bar-success" aria-valuemin="15" aria-valuemax="115" aria-valuenow="25" role="progressbar" style="width: 10%;">
+                              <span class="progress-label">25</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="progress-title">Numbers</div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="progress" data-goal="60" data-plugin="progress">
+                            <div class="progress-bar progress-bar-success" aria-valuemin="15" aria-valuemax="115" aria-valuenow="25" role="progressbar" style="width: 10%;">
+                              <span class="progress-label">25</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button type="button" class="btn btn-danger ladda-button center-block" data-style="expand-right" data-plugin="ladda" style="/* margin-top: 20px; */">
+                        <span class="ladda-label">More...</span>
+                        <span class="ladda-spinner"></span><span class="ladda-spinner"></span><span class="ladda-spinner"></span>
+                        <span class="ladda-spinner"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+--
+    </div>
+      <!-- End Appear Animate< -->
+  </div>
+
+
+<div class="row">
+        <div style="text-align: center;">
+          <nav>
+            <ul class="pagination pagination-gap">
+              <li class="disabled">
+                <a href="javascript:void(0)" aria-label="Previous">
+                  <span aria-hidden="true">«</span>
+                </a>
+              </li>
+              {% for pg in pages %}
+              <li class="active">
+                <a href="?page={{ pg }}">
+                  {{ pg }}
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+
+               {% endfor %}
+              <li>
+                <a href="javascript:void(0)" aria-label="Next">
+                  <span aria-hidden="true">»</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer-legal">© 2016 <a href="http://themeforest.net/item/remark-responsive-bootstrap-admin-template/11989202">Remark</a></div>
+    <div class="site-footer-right">
+      Crafted with <i class="red-600 wb wb-heart"></i> by <a href="http://themeforest.net/user/amazingSurge">amazingSurge</a>
+    </div>
+  </footer>
+  <!-- Core  -->
+  <script src="{% static "global/vendor/jquery/jquery.min.js" %}"></script>
+  <script src="{% static "global/vendor/bootstrap/bootstrap.min.js" %}"></script>
+  <script src="{% static "global/vendor/animsition/animsition.min.js" %}"></script>
+  <script src="{% static "global/vendor/asscroll/jquery-asScroll.min.js" %}"></script>
+  <script src="{% static "global/vendor/mousewheel/jquery.mousewheel.min.js" %}"></script>
+  <script src="{% static "global/vendor/asscrollable/jquery.asScrollable.all.min.js" %}"></script>
+  <script src="{% static "global/vendor/ashoverscroll/jquery-asHoverScroll.min.js" %}"></script>
+  <script src="{% static "assets/js/material/waves.min.js"%}"></script>
+
+  <!-- Plugins -->
+  <script src="{% static "global/vendor/switchery/switchery.min.js" %}"></script>
+  <script src="{% static "global/vendor/intro-js/intro.min.js" %}"></script>
+  <script src="{% static "global/vendor/screenfull/screenfull.min.js" %}"></script>
+  <script src="{% static "global/vendor/slidepanel/jquery-slidePanel.min.js" %}"></script>
+
+  <!-- Plugins For This Page -->
+  <script src="{% static "global/vendor/flip/jquery.flip.min.js" %}"></script>
+  <script src="{% static "global/vendor/asprogress/jquery-asProgress.min.js" %}"></script>
+  <script src="{% static "global/vendor/raty/jquery.raty.js" %}"></script>
+  <script src="{% static "global/vendor/jquery-labelauty/jquery-labelauty.js" %}"></script>
+  <script src="{% static "global/vendor/matchheight/jquery.matchHeight-min.js" %}"></script>
+  <script src="{% static "global/vendor/peity/jquery.peity.min.js" %}"></script>
+    <script src="{% static "global/vendor/aspaginator/jquery.asPaginator.min.js" %}"></script>
+
+  <!-- Scripts -->
+  <script src="{% static "global/js/core.min.js" %}"></script>
+  <script src="{% static "assets/js/material/sections/site.min.js" %}"></script>
+
+  <script src="{% static "assets/js/material/sections/menu.min.js" %}"></script>
+  <script src="{% static "assets/js/material/sections/menubar.min.js" %}"></script>
+  <script src="{% static "assets/js/material/sections/gridmenu.min.js" %}"></script>
+  <script src="{% static "assets/js/material/sections/sidebar.min.js" %}"></script>
+
+  <script src="{% static "global/js/configs/config-colors.min.js" %}"></script>
+  <script src="{% static "assets/js/configs/config-tour.min.js" %}"></script>
+
+  <!-- Components for this Page -->
+  <script src="{% static "global/js/components/nprogress.min.js" %}"></script>
+  <script src="{% static "global/js/components/jquery-appear.min.js" %}"></script>
+  <script src="{% static "global/js/components/buttons.min.js" %}"></script>
+  <script src="{% static "global/js/components/asprogress.min.js" %}"></script>
+  <script src="{% static "global/js/components/raty.min.js" %}"></script>
+
+  <script src="{% static "global/js/components/asscrollable.min.js" %}"></script>
+  <script src="{% static "global/js/components/animsition.min.js" %}"></script>
+  <script src="{% static "global/js/components/slidepanel.min.js" %}"></script>
+  <script src="{% static "global/js/components/switchery.min.js" %}"></script>
+  <script src="{% static "assets/js/material/tabs.min.js" %}"></script>
+
+  <script src="{% static "global/js/components/matchheight.min.js" %}"></script>
+  <script src="{% static "global/js/components/jquery-labelauty.min.js" %}"></script>
+  <script src="{% static "global/js/components/aspaginator.min.js" %}"></script>
+
+
+  <script src="{% static "assets/examples/js/dashboard/v1.min.js" %}"></script>
+  <script src="{% static "assets/examples/js/advanced/animation.min.js" %}"></script>
+  <script src="https://use.fontawesome.com/6e0bf419fe.js"></script>
+
+  <script>
+    $(document).ready(function($) {
+    Site.run(), function() {Waves.attach(".page-content .btn-floating", ["waves-light"])};
+}
+
+);
+  </script>
+   <script>
+  $(".back .panel .panel-body").css({'height':($(".front .panel .panel-body").height()+'px')});
+  $(".card").flip();
+
+
+  </script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js',
+      'ga');
+
+    ga('create', 'UA-65522665-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+
+</html>

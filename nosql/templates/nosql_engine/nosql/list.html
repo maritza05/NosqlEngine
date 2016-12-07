@@ -6,6 +6,52 @@
 {% endblock %}
 
 {% block content %}
+    <h2>Search:</h2>
+        <form action="{% url 'nosql:search_form' %}" method="post">
+            {% csrf_token %}
+            <label for="name">Nosql name:</label>
+            <input type="text" name="name" id="name"/>
+            <label for="min_rank">Min.No stars:</label>
+            <input type="number" name="min_rank" id="min_rank"/>
+             <label for="max_rank">Max. No stars:</label>
+            <input type="number" name="max_rank" id="max_rank" />
+
+            {% for data_model in datamodels %}
+
+               <div class="col-md-4">
+                 <input type="checkbox" id="{{ data_model.slug }}" name="datamodel" value="{{ data_model.name }}" class="filled-in chk-col-blue">
+                 <label for="{{ data_model.slug }}">{{ data_model.name }}</label>
+               </div>
+
+            {% endfor %}
+            {% for driver in languages %}
+                <div class="col-md-4">
+                <input type="checkbox" id="{{ driver }}" name="driver" value="{{ driver }}" class="filled-in chk-col-blue">
+                <label for="{{ driver }}">{{ driver }}</label>
+              </div>
+            {% endfor %}
+            {% for license in licenses %}
+              <div class="col-md-4">
+                <input type="checkbox" id="{{ license }}" name="license" value="{{ license }}" class="filled-in chk-col-blue">
+                <label for="{{ license }}">{{ license|title }}</label>
+              </div>
+            {% endfor %}
+          </div>
+            <input type="submit" value="Search" />
+        </form>
+    {% if datamodel_aggs %}
+    <h2>Aggregations</h2>
+    <ul>
+        {% for agg in datamodel_aggs %}
+            <li>
+                <a href="{{ agg.url }}">{{ agg.name }}</a> ({{ agg.doc_count }})
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+
+
     <div>
         <h3>Datamodels</h3>
         <ul>
@@ -22,13 +68,27 @@
 
     <div>
         <h1>{% if datamodel %}{{ datamodel.name }}{% else %}Nosqls{% endif %}</h1>
-        {% for nosql in nosqls %}
-        <div class="item">
-            <a href="{{ nosql.get_absolute_url }}">{{ forloop.counter }}.- {{ nosql.name }} - Stackshare votes: {{ nosql.stackshare_votes }} - Stack followers: {{ nosql.stackoverflow_followers }} - Questions: {{ nosql.amount_stackoverflow_questions }}</a>
-            {{ nosql.stack_description }}
-            <hr>
-            {{ nosql.official_description }}
-        </div>
-        {% endfor %}
+        {% if nosqls %}
+            {% for nosql in nosqls %}
+            <div class="item">
+                <a href="{{ nosql.local_website }}">{{ forloop.counter }}.- Rank:{{ nosql.rank }} {{ nosql.name }} Datamodel: {{ nosql.datamodel }} - Stackshare votes: {{ nosql.stackshare_votes }} - Stack followers: {{ nosql.stackoverflow_followers }} - Questions: {{ nosql.amount_stackoverflow_questions }}</a>
+                {{ nosql.stack_description }}
+                <hr>
+
+            </div>
+            {% endfor %}
+        {% else %}
+            No results found. Please try another search term.
+        {% endif %}
     </div>
+
+
+<div class="pagination">
+{% for pg in pages %}
+   <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
+
+          {% endfor %}
+</div>
+
+
 {% endblock %}

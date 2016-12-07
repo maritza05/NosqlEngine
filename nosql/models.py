@@ -50,7 +50,7 @@ class Nosql(models.Model):
 
 
     class Meta:
-        ordering = ('name',)
+        ordering = ('-stackoverflow_followers',)
         index_together = (('id', 'slug'),)
 
     def __str__(self):
@@ -69,6 +69,111 @@ class Nosql(models.Model):
         summary = summarizer.parseText(text)
         return summary
 
+    def get_rank(self):
+        actual = self.stackoverflow_followers
+        if actual > 1000:
+            actual = 1000
+        std = (actual - 5) / (1000 - 5)
+        rank = std * (5-1) + 1
+        return int(rank)
+
+    def get_performance_ranking(self):
+        comments = Comment.objects.filter(nosql=self)
+        positive_count = 0
+        negative_count = 0
+        neutral_count = 0
+        for comment in comments:
+            if comment.positive and comment.probability > 0.60:
+                positive_count +=1
+            elif comment.positive == False and comment.probability > 0.60:
+                negative_count += 1
+            elif comment.probability <= 0.60:
+                neutral_count += 1
+        if len(comments) != 0:
+            positive = round((positive_count * 100)/len(comments), 2)
+            negative = round((negative_count * 100)/len(comments), 2)
+            neutral = round((neutral_count * 100)/len(comments), 2)
+        else:
+            positive = 0
+            negative = 0
+            neutral = 0
+        return [negative, neutral, positive]
+
+    def get_ranking_distribution(self):
+        comments = Comment.objects.filter(nosql=self)
+        bucket_1 = 0
+        bucket_2 = 0
+        bucket_3 = 0
+        bucket_4 = 0
+        bucket_5 = 0
+        for comment in comments:
+            probability = comment.probability
+            if comment.positive == False:
+                probability = 1- probability
+            if probability <= 0.2:
+                bucket_1 += 1
+            if probability > 0.2 and probability <= 0.4:
+                bucket_2 += 1
+            if probability > 0.4 and probability <= 0.6:
+                bucket_3 += 1
+            if probability > 0.6 and probability <= 0.8:
+                bucket_4 += 1
+            if probability > 0.8:
+                bucket_5 += 1
+
+        if len(comments) != 0:
+            bucket_1_perc = round((bucket_1 * 100)/len(comments), 2)
+            bucket_2_perc = round((bucket_2 * 100)/len(comments), 2)
+            bucket_3_perc = round((bucket_3 * 100)/len(comments), 2)
+            bucket_4_perc = round((bucket_4 * 100)/len(comments), 2)
+            bucket_5_perc = round((bucket_5 * 100)/len(comments), 2)
+        else:
+            bucket_1_perc = 0
+            bucket_2_perc = 0
+            bucket_3_perc = 0
+            bucket_4_perc = 0
+            bucket_5_perc = 0
+        return [bucket_1_perc, bucket_2_perc, bucket_3_perc, bucket_4_perc, bucket_5_perc]
+
+    def get_performance_rank(self):
+        comments = Comment.objects.filter(nosql=self)
+        v = len(comments)
+        m = 10
+        total = 0
+        wr = 0
+        star = 0
+        if len(comments) != 0:
+            for comment in comments:
+                probability = comment.probability
+                if comment.positive == False:
+                    probability = 1 - probability
+                total += probability
+
+            R = total /len(comments)
+            c = 6.9
+            wr = (v / (v+m)) * R + (m / (v+m)) * c
+
+            if wr <= 2:
+                star = 1
+            if wr > 2 and wr <= 4:
+                star = 2
+            if wr > 4 and wr <= 6:
+                star = 3
+            if wr > 6 and wr <= 8:
+                star = 4
+            if probability > 8:
+                star = 5
+        return [round(wr, 1), star]
+
+    def get_comments(self):
+        comments = Comment.objects.filter(nosql=self)
+        ranking = []
+        for comment in comments:
+            if comment.positive == False:
+                ranking.append(int(round(comment.probability * -10, 0)))
+            else:
+                ranking.append(int(round(comment.probability * 10, 0)))
+        return ranking
 
 
 class License(models.Model):
@@ -130,3 +235,23 @@ class ProgrammingLanguage(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         super(ProgrammingLanguage, self).save(*args, **kwargs)
+
+
+class Link(models.Model):
+    title = models.CharField(max_length=60, unique=True)
+    url = models.URLField(unique=True)
+    number_backlinks = models.IntegerField(default=0)
+    nosql = models.ForeignKey(Nosql, related_name='links', null=False)
+    class Meta:
+        ordering = ('-number_backlinks',)
+
+
+class Comment(models.Model):
+    nosql = models.ForeignKey(Nosql, related_name='comments')
+    url = models.URLField(unique=True)
+    body = models.TextField()
+    positive = models.BooleanField(default=False)
+    probability = models.FloatField(default=0.0)
+
+    def __str__(self):
+        return 'Comment {} on {}'.format(self.url, self.nosql)

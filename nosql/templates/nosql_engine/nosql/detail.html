@@ -38,7 +38,36 @@
     {% else %}
         <h3>Without Wikipedia Table</h3>
     {% endif %}
+
+    {% if links %}
+    <div>
+        <ul>
+            {% for link in links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a>: <span>{{ link.number_backlinks }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+        <h3>Without Links</h3>
+    {% endif %}
+
+
     <div>
          {{ summary }}
     </div>
+
+     {% if comments %}
+    <div>
+        {% for comment in comments %}
+        <div>
+            <span>Positive: {{ comment.positive }} probability: {{ comment.probability }}%</span>
+            <hr>
+            <p>{{ comment.body }}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+    {% else %}
+        <h3>Without Links</h3>
+    {% endif %}
 {% endblock %}

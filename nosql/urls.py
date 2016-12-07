@@ -15,5 +15,8 @@ urlpatterns = [
     url(r'^load/descriptions/data', views.load_descriptions_for_all_nosql, name='load_all_descriptions'),
     url(r'^load/stackshare/data', views.get_all_stackshare_votes, name='load_stackshare_votes'),
     url(r'^load/stackoverflow/data', views.get_all_stackoverflow_followers_and_questions, name='load_stackoverflow'),
+    url(r'^load/form', views.search_results, name='search_form'),
+    url(r'^output/form', views.output_form, name='output_form'),
+    url(r'^load/comments', views.load_comments, name='load_comments'),
 
 ]

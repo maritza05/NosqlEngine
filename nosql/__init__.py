@@ -1,0 +1,1 @@
+default_app_config = "nosql.initial_configurations.apps.MainConfig"

@@ -1,0 +1,19 @@
+.menu-item {
+    font-size: 16px;
+    padding: 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.menu-item a {
+    color: rgba(118, 131, 143, 0.9);
+    display: block;
+    margin: 0;
+    padding: 16px;
+    border: 0;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
